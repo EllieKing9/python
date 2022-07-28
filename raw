@@ -1,0 +1,194 @@
+								
+	python							
+		interpreter						
+		pycharm						
+								
+	immutable	자료형	type 으로 확인	type(3.0)				
+	(수정 불가능)		정수(숫자형): int	소수(숫자형): float				
+					거듭제곱	2 ** 3	8	
+				floor division	버림 나눗셈	7 // 2	3	
+				round	반올림	round(3.14159, 2)	3.14	
+			문자열: str					
+				string concatenation	문자열 연결	"hello" * 3		
+			불린: boolean	True, False, not True				
+			튜플(tuple)					"for left in range(len(numbers) // 2):
+    # 인덱스 left와 대칭인 인덱스 right 계산    
+    right = len(numbers) - left - 1
+
+    # 위치 바꾸기
+    numbers[right], numbers[left] = numbers[left], numbers[right]"
+								
+		형변환	type conversion			"hellp"+"hello"+"hello"		
+		format						
+			print("오늘은 {}년 {}월 {}일 입니다.".format(year, month, day)					
+								
+			date_string = "오늘은 {}년 {}월 {}일 입니다."					
+			print(date_string.format(year, month, day))					
+								
+			{2:.0f}	정수로				
+			{2:.2f}	소수 2번째까지				
+								
+			"name = ""최지웅""
+age = 32"					
+			print("제 이름은 %s이고 %d살입니다." % (name, age))					
+			print("제 이름은 {}이고 {}살입니다.".format(name, age))					
+			print(f"제 이름은 {name}이고 {age}살입니다.")					
+		추상화						
+			funtion	object				
+								
+		변수						
+		함수						
+			내장함수					
+			정의함수	def				
+				header	def func():			
+				body	tab …			
+			파라미터	optional parameter				
+			return					
+			syntactic sugar					
+								
+		범위(scope)						
+			로컬변수, 글로벌변수					
+		상수(constant)						
+			변하지 않는 수로 변수명을 대문자로 사용					
+		스타일가이드						
+			PEP8					
+								
+		제어문						
+			"while 조건 :
+    수행"					
+								
+			"if 조건 :
+    수행"					
+				break				
+				continue				
+								
+	Mutable 	리스트						
+	(수정 가능)		numbers = [2, 3, 5, 7, 11, 13]					
+			names = ["윤수", "혜린", "태호", "영훈"]					
+			요소 	인덱스	인덱싱	슬라이싱		
+					names[1]	numbers[0:4]		
+					names[-4]	numbers[2:]		
+						numbers[:3]		
+				print(members.index("윤수"))				
+				len(numbers)				
+			추가연산	numbers.append(5)				
+				del numbers[3]				
+			삽입연산	numbers.insert(4, 3)				
+				fruits.remove("파인애플")	fruits = ["딸기", "당근", "파인애플", "수박", "참외", "메론"]			
+								
+			정렬된 결과를 리턴	sorted(numbers)	new_list = sorted(numbers)			
+			기존 리스트는 건드리지 않음	sorted(numbers, reverse=True)				
+			정렬만 함	numbers.sort()				
+				numbers.reverse()				
+								
+			primes = [2, 3, 5, 7, 11, 13, 17, 19, 23]					
+				print(7 in primes)				
+				print(7 not in primes)				
+								
+			nested list					
+				grades = [[62, 75, 77], [78, 81, 86], [85, 91, 89]]				
+								
+			문자열 -> 리스트	security_number = "880720-1234567"				
+				num_list = list(security_number)				
+			리스트 -> 문자열	security_number = ''.join(num_list)				
+								
+		사전	dictionary	my_dictionary = dict()				
+			key-value pair(키-값 쌍)					
+			"my_dictonary = {
+    5: 25,
+    2: 4,
+    3; 9
+}"	"print(my_dictionart[3]) 
+--> 9"				
+				my_dictionart.values()	print('있어없어' in my_dictionary.values())			
+					"for value in my_dictionary.values():
+    print(value)"			
+				my_dictionary.keys()	"for key in my_dictionary.keys():
+    value = my_dictionary[key]
+    print(key, value)"			
+					for key, value in my_dictionary.items():			
+								
+		for						
+			"for i in [1. 2, 3, 4, 5]:
+    print(i)"					
+			range	for i in range(stop):				
+				for i in range(start, stop):				
+				for i in range(start, stop, step):				
+								
+				"for i in range(len(numbers)):
+    print(f""{i} {numbers[i]}"")"				
+								
+		alias						
+								
+	import module							
+		import module as name						
+								
+			import random					
+		정수	print(random.randint(1, 20))					
+		소수	print(random.uniform(0, 1))					
+								
+			import datetime					
+			pi_day = datetime.datetime(2020, 3, 14)		2020-03-14 0:00			
+			pi_day = datetime.datetime(2020, 3, 14, 13, 6, 15)		2020-03-14 13:06			
+			today = datetime.datetime.now()					
+			print(today - pi_day)		22 days, 4:42:57.360266			
+								
+			my_timedelta = datetime.timedelta(days=5, hours=3, minutes=10, seconds=50)					
+			print(today + my_timedelta)					
+								
+			today = datetime.datetime.now()					
+				print(today)				
+				print(today.year)				
+				print(today.month)				
+				print(today.day)				
+				print(today.hour)				
+				print(today.minute)				
+				print(today.second)				
+				print(today.microsecond)				
+			print(today.strftime("%A, %B %dth %Y"))					
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+			d					
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+	input							
+		name = input("이름을 입력하세요: ")						
+		print(name)						
+		입력값은 문자열						
+		num = int(input("숫자를 입력하세요: "))						
+		print(num)						
+								
+								
+	file	with open('new_file.txt', 'a', encoding='utf-8')						
+		with open('***.txt', 'r') as f;		with open('***.txt', 'w') as f;	with open('***.txt', 'a') as f;			
+		    for line in f:						
+		        print(line)						
+		        print(line.strip())						
+								
+		strip						
+			print("     \t   \n  abc   def    \n\n\n".strip()					
+				abc   def				
+		split	문자열로 취급					
+			my_string = "1. 2. 3. 4. 5. 6"					
+			print(my_string.split("."))					
+				['1', ' 2', ' 3', ' 4', ' 5', ' 6']				
+			print("    \t 2 \n    3 4".split())					
+				['2', '3', '4']				
