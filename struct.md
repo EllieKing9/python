@@ -26,5 +26,60 @@ O(n + 2n) = O(3n) = O(n)
 
 insert operation (삽입 연산)
 O(n)
-
 ```
+
+링크드 리스트
+```
+class Node:
+  def __init__(self, data):
+    self.data = data
+    self.next = None
+
+# 데이터 2, 3, 5, 7, 11 을 가지는 노드들 생성
+head_node = Node(2)
+node_1 = Node(3)
+node_2 = Node(5)
+node_3 = Node(7)
+tail_node = Node(11)
+
+head_node.next = node_1
+node_1.next = node_2
+node_2.next = node_3
+node_3.next = tail_node
+
+#노드들 출력
+iterator = head_node
+while iterator is not None:
+  print(iterator.data)
+  iterator = iterator.next
+```
+```
+clase linkedList:
+  def __init__(self):
+    self.head = None
+    self.tail = None
+
+  def append(self, data):
+    new_node = Node(data)
+    if self.head is None:
+      self.head = new_node
+      self.tail = new_node
+    else:
+      self.tail.next = new_node
+      self.tail = new_node
+
+my_list = linkedList()
+
+my_list.append(2)
+my_list.append(3)
+my_list.append(5)
+my_list.append(7)
+my_list.append(11)
+
+iterator = my_list.head
+while iterator is not None:
+  print(iterator.data)
+  iterator = iterator.next
+```
+
+
