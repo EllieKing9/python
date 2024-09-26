@@ -753,10 +753,118 @@ classes.remove("알고리즘")
 print(classes)
 ```
 
+```
+리스트 (동적 배열)
+연산	예시	시간 복잡도
+접근	list_1[0], list_1[0] = 5	O(1)
+추가	list_1.append(2) O(1)(분할 상환)
+맨 뒤 삭제	list_1.pop() O(1)(분할 상환)
+길이 확인	len(list_1)	O(1)
+삽입	list_1.insert(3, "성태호")	O(n)
+삭제	del list_1[0], list_1.pop(3)	O(n)
+탐색	"이재하" in list_1	O(n)
 
+deque (더블리 링크드 리스트)
+연산	예시	시간 복잡도
+맨 앞 삭제	deque_1.popleft()	O(1)
+맨 앞 삽입	deque_1.appendleft("김신의")	O(1)
+맨 뒤 삭제	deque_1.pop()	O(1)
+맨 뒤 삽입	deque_1.append("이규식")	O(1)
+길이 확인	len(deque_1)	O(1)
 
+딕셔너리 (해시 테이블)
+연산	예시	시간 복잡도
+탐색	dict_1["성태호"]	O(1)(평균)
+삽입	dict_1["강영훈"] = 100	O(1)(평균)
+삭제	del dict_1["강영훈"], dict_1.pop("강영훈")	O(1)(평균)
+길이 확인	len(dict_1)	O(1)
 
+세트 (해시 테이블)
+연산	예시	시간 복잡도
+탐색	"최지웅" in set_1	O(1)(평균)
+삽입	set_1.add("손동욱")	O(1)(평균)
+삭제	set_1.remove("김현승"), set_1.pop("김현승")	O(1)(평균)
+길이 확인	len(set_1)	O(1)
+```
 
+이진트리
+```
+class Node:
+    def __init__ (self, data):
+        self.data = data
+        self.left_child = None
+        self.right_child = None
+        
+root_node = Node(2)
+node_B = Node(3)
+node_C = Node(5)
+node_D = Node(7)
+node_E = Node(11)
+
+root_node.left_child = node_B
+root_node.right_child = node_C
+
+node_B.left_child = node_D
+node_B.right_child = node_E
+
+print(root_node.left_child.data)
+
+def get_parent_index(complete_binary_tree, index):
+    """배열로 구현한 완전 이진 트리에서 index번째 노드의 부모 노드의 인덱스를 리턴하는 함수"""
+    # 여기에 코드를 작성하세요
+    # index = int(index / 2)
+    index = index // 2
+    # if index > 0 and index < len(complete_binary_tree):
+    if 0 < index < len(complete_binary_tree):    
+        return index
+    else:
+        return None
+
+def get_left_child_index(complete_binary_tree, index):
+    """배열로 구현한 완전 이진 트리에서 index번째 노드의 왼쪽 자식 노드의 인덱스를 리턴하는 함수"""
+    # 여기에 코드를 작성하세요
+    index = index * 2 
+    if index > 0 and index < len(complete_binary_tree):
+        return index
+    else:
+        return None
+
+def get_right_child_index(complete_binary_tree, index):
+    """배열로 구현한 완전 이진 트리에서 index번째 노드의 오른쪽 자식 노드의 인덱스를 리턴하는 함수"""
+    # 여기에 코드를 작성하세요
+    index = (index * 2) + 1
+    if index > 0 and index < len(complete_binary_tree):
+        return index
+    else:
+        return None
+
+# 테스트 코드
+root_node_index = 1 # root 노드
+
+tree = [None, 1, 5, 12, 11, 9, 10, 14, 2, 10]  # 과제 이미지에 있는 완전 이진 트리
+
+# root 노드의 왼쪽과 오른쪽 자식 노드의 인덱스를 받아온다
+left_child_index = get_left_child_index(tree, root_node_index)
+right_child_index = get_right_child_index(tree,root_node_index)
+
+print(tree[left_child_index])
+print(tree[right_child_index])
+
+# 9번째 노드의 부모 노드의 인덱스를 받아온다
+parent_index = get_parent_index(tree, 9)
+
+print(tree[parent_index])
+
+# 부모나 자식 노드들이 없는 경우들
+parent_index = get_parent_index(tree, 1)  # root 노드의 부모 노드의 인덱스를 받아온다
+print(parent_index)
+
+left_child_index = get_left_child_index(tree, 6)  # 6번째 노드의 왼쪽 자식 노드의 인덱스를 받아온다
+print(left_child_index)
+
+right_child_index = get_right_child_index(tree, 8)  # 8번째 노드의 오른쪽 자식 노드의 인덱스를 받아온다
+print(right_child_index)
+```
 
 
 
