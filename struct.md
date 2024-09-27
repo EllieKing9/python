@@ -866,6 +866,10 @@ right_child_index = get_right_child_index(tree, 8)  # 8번째 노드의 오른�
 print(right_child_index)
 ```
 
+트리 순회
+```
+
+```
 
 
 
