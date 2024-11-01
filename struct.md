@@ -53,6 +53,7 @@ while iterator is not None:
   print(iterator.data)
   iterator = iterator.next
 ```
+
 ```
 clase linkedList:
   def __init__(self):
@@ -1215,3 +1216,4 @@ bst.delete(11)  # 11을 삭제하며, 14가 대신 위치를 차지
 
 bst.print_sorted_tree()
 ```
+
